@@ -20,12 +20,12 @@
     <dependency>
       <artifactId>commons-lang3</artifactId>
       <groupId>org.apache.commons</groupId>
-      <version>3.13.0</version>
+      <version>3.20.0</version>
     </dependency>
     <dependency>
       <artifactId>commons-collections4</artifactId>
       <groupId>org.apache.commons</groupId>
-      <version>4.4</version>
+      <version>4.5.0</version>
     </dependency>
     <dependency>
       <artifactId>jgrapht-core</artifactId>
@@ -36,13 +36,13 @@
       <artifactId>assertj-core</artifactId>
       <groupId>org.assertj</groupId>
       <scope>test</scope>
-      <version>3.23.1</version>
+      <version>3.27.6</version>
     </dependency>
     <dependency>
       <artifactId>junit</artifactId>
       <groupId>junit</groupId>
       <scope>test</scope>
-      <version>4.13.1</version>
+      <version>4.13.2</version>
     </dependency>
     <dependency>
       <artifactId>junit-jupiter</artifactId>
