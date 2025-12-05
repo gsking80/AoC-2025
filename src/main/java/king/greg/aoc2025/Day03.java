@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Day03 {
 
+  private static final Character ZERO = '0';
   private final List<String> lines;
 
   public Day03(java.util.List<String> lines) {
@@ -29,7 +30,7 @@ public class Day03 {
   }
 
   private long joltage(final char[] ratings, final int start, final int batteries) {
-    char max = '0';
+    char max = ZERO;
     int index = start;
     for (int i = start; i <= ratings.length - batteries; i++) {
       if (ratings[i] > max) {
@@ -38,7 +39,6 @@ public class Day03 {
       }
     }
     long joltageToAdd = batteries == 1 ? 0 : joltage(ratings, index + 1, batteries - 1);
-    return (long) (Integer.parseInt(String.valueOf(max)) * Math.pow(10, (double) batteries - 1))
-        + joltageToAdd;
+    return (long) ((max - ZERO) * Math.pow(10, (double) batteries - 1)) + joltageToAdd;
   }
 }
