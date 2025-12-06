@@ -41,7 +41,7 @@ public class Day06 {
 
     long sum = 0;
 
-    int index = lines.stream().mapToInt(String::length).max().orElse(0) - 1;
+    int index = grid[0].length - 1;
     while (index >= 0) {
 
       final List<Long> values = new ArrayList<>();
