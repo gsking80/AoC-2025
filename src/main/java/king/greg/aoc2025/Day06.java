@@ -49,15 +49,13 @@ public class Day06 {
       while (operand == ' ') {
         final StringBuilder sb = new StringBuilder();
         for (int row = 0; row < operandRow; row++) {
-          if (grid[row].length > index) {
-            sb.append(grid[row][index]);
-          }
+          sb.append(grid[row][index]);
         }
         var value = sb.toString();
         if (!value.isBlank()) {
           values.add(Long.parseLong(value.trim()));
         }
-        operand = grid[operandRow].length > index ? grid[operandRow][index] : ' ';
+        operand = grid[operandRow][index];
         index--;
       }
       if (operand == '+') {
