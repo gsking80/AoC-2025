@@ -33,6 +33,11 @@
       <version>1.5.2</version>
     </dependency>
     <dependency>
+      <artifactId>z3-turnkey</artifactId>
+      <groupId>tools.aqua</groupId>
+      <version>4.14.1</version>
+    </dependency>
+    <dependency>
       <artifactId>assertj-core</artifactId>
       <groupId>org.assertj</groupId>
       <scope>test</scope>
@@ -48,7 +53,7 @@
       <artifactId>junit-jupiter</artifactId>
       <groupId>org.junit.jupiter</groupId>
       <scope>test</scope>
-      <version>RELEASE</version>
+      <version>5.11.3</version>
     </dependency>
   </dependencies>
   <groupId>king.greg</groupId>
