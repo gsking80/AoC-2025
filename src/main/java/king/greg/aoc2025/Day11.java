@@ -3,10 +3,11 @@ package king.greg.aoc2025;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 public class Day11 {
 
-  private final Map<String, Long> pathsMap = new HashMap<>();
+  private final Map<String, Long> pathsMap = new ConcurrentSkipListMap<>();
   private final Map<String, List<String>> cables;
 
   public Day11(final List<String> lines) {
@@ -41,22 +42,18 @@ public class Day11 {
   }
 
   private long paths(final String start, final String end) {
-    if (pathsMap.containsKey(start)) {
-      return pathsMap.get(start);
-    }
-    if (start.equals(end)) {
-      pathsMap.put(start, 1L);
-      return 1L;
-    }
-    if (!cables.containsKey(start)) {
-      pathsMap.put(start, 0L);
-      return 0;
-    }
-    long paths = 0;
-    for (final var cable : cables.get(start)) {
-      paths += paths(cable, end);
-    }
-    pathsMap.put(start, paths);
-    return paths;
+    return pathsMap.computeIfAbsent(start, k -> {
+      if (start.equals(end)) {
+        return 1L;
+      }
+      if (!cables.containsKey(start)) {
+        return 0L;
+      }
+      long paths = 0;
+      for (final var cable : cables.get(start)) {
+        paths += paths(cable, end);
+      }
+      return paths;
+    });
   }
 }
